@@ -4,6 +4,8 @@ import pyautogui
 import math
 from random import shuffle
 
+from output import display_list
+
 pygame.init()
 
 # set screen size to highest power of 2 below no. vertical pixels
