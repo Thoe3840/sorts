@@ -8,6 +8,7 @@ from time import sleep
 from output import display_list
 from insert import insert_sort
 from bubble import bubble_sort
+from bogo import bogo_sort
 
 pygame.init()
 
@@ -38,3 +39,6 @@ while running:
                 new_sort(a, HEIGHT, DISP, bubble_sort, 'Bubble Sort')
             elif event.key == K_i:
                 new_sort(a, HEIGHT, DISP, insert_sort, 'Insert Sort')
+            elif event.key == K_o:
+                # pass in shorter list...
+                new_sort(a, HEIGHT, DISP, bogo_sort, 'Bogo Sort')
