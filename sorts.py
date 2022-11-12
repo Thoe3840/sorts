@@ -20,27 +20,21 @@ display.set_caption('Sorts')
 a = [i for i in range(WIDTH)]
 display_list(a, HEIGHT, DISP)
 
+def new_sort(a, h, disp, sort_type, caption):
+    display.set_caption(caption)
+    shuffle(a)
+    display_list(a, h, disp)
+    sleep(1)
+    sort_type(a, h, disp)
+
 running = True
 while running:
-    new_sort = False
     for event in pygame.event.get():
         if event.type == QUIT:
             running = False
         # change to buttons later
         elif event.type == KEYDOWN:
             if event.key == K_b:
-                new_sort = True
-                caption = 'Bubble Sort'
-                sort_type = bubble_sort
-
+                new_sort(a, HEIGHT, DISP, bubble_sort, 'Bubble Sort')
             elif event.key == K_i:
-                new_sort = True
-                caption = 'Insert Sort'
-                sort_type = insert_sort
-
-            if new_sort:
-                display.set_caption(caption)
-                shuffle(a)
-                display_list(a, HEIGHT, DISP)
-                sleep(1)
-                sort_type(a, HEIGHT, DISP)
+                new_sort(a, HEIGHT, DISP, insert_sort, 'Insert Sort')
