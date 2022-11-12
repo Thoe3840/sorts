@@ -9,6 +9,7 @@ from output import display_list
 from insert import insert_sort
 from bubble import bubble_sort
 from bogo import bogo_sort
+from selection import selection_sort
 
 pygame.init()
 
@@ -42,3 +43,5 @@ while running:
             elif event.key == K_o:
                 # pass in shorter list...
                 new_sort([i for i in range(1, 8)], WIDTH, HEIGHT, DISP, bogo_sort, 'Bogo Sort')
+            elif event.key == K_s:
+                new_sort(a, WIDTH, HEIGHT, DISP, selection_sort, 'Selection Sort')
