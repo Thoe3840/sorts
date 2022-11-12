@@ -12,6 +12,8 @@ from bogo import bogo_sort
 from selection import selection_sort
 from double_selection import double_selection_sort
 from cocktail import cocktail_sort
+from merge import merge_sort
+from heap import heap_sort
 
 class Button():
     pass
@@ -54,3 +56,7 @@ while running:
                 new_sort(a, WIDTH, HEIGHT, DISP, double_selection_sort, 'Double Selection Sort')
             elif event.key == K_c:
                 new_sort(a, WIDTH, HEIGHT, DISP, cocktail_sort, 'Cocktail Sort')
+            elif event.key == K_m:
+                new_sort(a, WIDTH, HEIGHT, DISP, merge_sort, 'Merge Sort')
+            elif event.key == K_h:
+                new_sort(a, WIDTH, HEIGHT, DISP, heap_sort, 'Heap Sort')
