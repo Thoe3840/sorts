@@ -4,7 +4,7 @@ import pyautogui
 import math
 from random import shuffle
 
-from output import display_list
+from insert import insert_sort
 
 pygame.init()
 
@@ -13,6 +13,10 @@ WIDTH = HEIGHT = 2 ** math.floor(math.log(pyautogui.size()[1], 2))
 
 DISP = display.set_mode((WIDTH, HEIGHT))
 display.set_caption('Sorts')
+
+a = [i for i in range(WIDTH)]
+shuffle(a)
+insert_sort(a, HEIGHT, DISP)
 
 running = True
 while running:
