@@ -18,15 +18,15 @@ WIDTH = HEIGHT = 2 ** math.floor(math.log(pyautogui.size()[1], 2))
 DISP = display.set_mode((WIDTH, HEIGHT))
 display.set_caption('Sorts')
 
-a = [i for i in range(WIDTH)]
-display_list(a, HEIGHT, DISP)
+a = [i for i in range(1, WIDTH + 1)]
+display_list(a, WIDTH, HEIGHT, DISP)
 
-def new_sort(a, h, disp, sort_type, caption):
+def new_sort(a, w, h, disp, sort_type, caption):
     display.set_caption(caption)
     shuffle(a)
-    display_list(a, h, disp)
+    display_list(a, w, h, disp)
     sleep(1)
-    sort_type(a, h, disp)
+    sort_type(a, w, h, disp)
 
 running = True
 while running:
@@ -36,9 +36,9 @@ while running:
         # change to buttons later
         elif event.type == KEYDOWN:
             if event.key == K_b:
-                new_sort(a, HEIGHT, DISP, bubble_sort, 'Bubble Sort')
+                new_sort(a, WIDTH, HEIGHT, DISP, bubble_sort, 'Bubble Sort')
             elif event.key == K_i:
-                new_sort(a, HEIGHT, DISP, insert_sort, 'Insert Sort')
+                new_sort(a, WIDTH, HEIGHT, DISP, insert_sort, 'Insert Sort')
             elif event.key == K_o:
                 # pass in shorter list...
-                new_sort(a, HEIGHT, DISP, bogo_sort, 'Bogo Sort')
+                new_sort([i for i in range(1, 8)], WIDTH, HEIGHT, DISP, bogo_sort, 'Bogo Sort')

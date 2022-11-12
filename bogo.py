@@ -7,8 +7,8 @@ def is_sorted(a):
             return False
     return True
 
-def bogo_sort(a, h, disp):
+def bogo_sort(a, w, h, disp):
     while not is_sorted(a):
         shuffle(a)
-        display_list(a, h, disp)
-    display_list(a, h, disp)
+        display_list(a, w, h, disp)
+    display_list(a, w, h, disp)
