@@ -9,6 +9,6 @@ def find_min(a, start):
 
 def selection_sort(a, w, h, disp):
     for i in range(len(a)):
-        j = find_min(a, i)
-        a[i], a[j] = a[j], a[i]
+        min = find_min(a, i)
+        a[i], a[min] = a[min], a[i]
         display_list(a, w, h, disp)

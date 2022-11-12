@@ -10,6 +10,10 @@ from insert import insert_sort
 from bubble import bubble_sort
 from bogo import bogo_sort
 from selection import selection_sort
+from double_selection import double_selection_sort
+
+class Button():
+    pass
 
 pygame.init()
 
@@ -19,15 +23,15 @@ WIDTH = HEIGHT = 2 ** math.floor(math.log(pyautogui.size()[1], 2))
 DISP = display.set_mode((WIDTH, HEIGHT))
 display.set_caption('Sorts')
 
-a = [i for i in range(1, WIDTH + 1)]
-display_list(a, WIDTH, HEIGHT, DISP)
-
 def new_sort(a, w, h, disp, sort_type, caption):
     display.set_caption(caption)
     shuffle(a)
     display_list(a, w, h, disp)
     sleep(1)
     sort_type(a, w, h, disp)
+
+a = [i for i in range(1, WIDTH + 1)]
+display_list(a, WIDTH, HEIGHT, DISP)
 
 running = True
 while running:
@@ -45,3 +49,5 @@ while running:
                 new_sort([i for i in range(1, 8)], WIDTH, HEIGHT, DISP, bogo_sort, 'Bogo Sort')
             elif event.key == K_s:
                 new_sort(a, WIDTH, HEIGHT, DISP, selection_sort, 'Selection Sort')
+            elif event.key == K_d:
+                new_sort(a, WIDTH, HEIGHT, DISP, double_selection_sort, 'Double Selection')
