@@ -1,4 +1,5 @@
 from output import display_list
+import pygame
 
 def cocktail_sort(a, w, h, disp):
     start, end, dir = 0, len(a) - 1, 1
@@ -11,3 +12,8 @@ def cocktail_sort(a, w, h, disp):
                 swapped = True
         display_list(a, w, h, disp)
         start, end, dir = end - 2*dir, start - dir, -1*dir
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                return False
+    return True

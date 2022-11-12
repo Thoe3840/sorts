@@ -1,4 +1,5 @@
 from output import display_list
+import pygame
 
 def merge(a, b, c, s):
     i = j = 0
@@ -19,10 +20,17 @@ def merge(a, b, c, s):
 def merge_sort_(a, s1, e1, s2, e2, w, h, disp):
     if s1 + 1 < e1 or s2 + 1 < e2:
         m1, m2 = (e1 - s1)//2 + s1, (e2 - s2)//2 + s2
-        merge_sort_(a, s1, m1, m1, e1, w, h, disp)
-        merge_sort_(a, s2, m2, m2, e2, w, h, disp)
+        if not merge_sort_(a, s1, m1, m1, e1, w, h, disp):
+            return False
+        if not merge_sort_(a, s2, m2, m2, e2, w, h, disp):
+            return False
     merge(a, a[s1 : e1], a[s2 : e2], s1)
     display_list(a, w, h, disp)
 
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            return False
+    return True
+
 def merge_sort(a, w, h, disp):
-    merge_sort_(a, 0, len(a)//2, len(a)//2, len(a), w, h, disp)
+    return merge_sort_(a, 0, len(a)//2, len(a)//2, len(a), w, h, disp)

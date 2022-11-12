@@ -1,4 +1,5 @@
 from output import display_list
+import pygame
 
 def find_min(a, start):
     min = start
@@ -12,3 +13,8 @@ def selection_sort(a, w, h, disp):
         min = find_min(a, i)
         a[i], a[min] = a[min], a[i]
         display_list(a, w, h, disp)
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                return False
+    return True

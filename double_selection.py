@@ -1,4 +1,5 @@
 from output import display_list
+import pygame
 
 def find_min_max(a, start):
     min = start
@@ -21,3 +22,8 @@ def double_selection_sort(a, w, h, disp):
         else:
             a[j], a[max] = a[max], a[j]
         display_list(a, w, h, disp)
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                return False
+    return True

@@ -1,4 +1,5 @@
 from output import display_list
+import pygame
 
 def max_heapify(a, i, l):
     left = i*2+1
@@ -22,3 +23,8 @@ def heap_sort(a, w, h, disp):
         a[i], a[0] = a[0], a[i]
         max_heapify(a, 0, i)
         display_list(a, w, h, disp)
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                return False
+    return True
