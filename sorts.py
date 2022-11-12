@@ -5,6 +5,7 @@ import math
 from random import shuffle
 
 from insert import insert_sort
+from bubble import bubble_sort
 
 pygame.init()
 
@@ -16,7 +17,7 @@ display.set_caption('Sorts')
 
 a = [i for i in range(WIDTH)]
 shuffle(a)
-insert_sort(a, HEIGHT, DISP)
+bubble_sort(a, HEIGHT, DISP)
 
 running = True
 while running:
