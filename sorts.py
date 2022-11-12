@@ -11,6 +11,7 @@ from bubble import bubble_sort
 from bogo import bogo_sort
 from selection import selection_sort
 from double_selection import double_selection_sort
+from cocktail import cocktail_sort
 
 class Button():
     pass
@@ -50,4 +51,6 @@ while running:
             elif event.key == K_s:
                 new_sort(a, WIDTH, HEIGHT, DISP, selection_sort, 'Selection Sort')
             elif event.key == K_d:
-                new_sort(a, WIDTH, HEIGHT, DISP, double_selection_sort, 'Double Selection')
+                new_sort(a, WIDTH, HEIGHT, DISP, double_selection_sort, 'Double Selection Sort')
+            elif event.key == K_c:
+                new_sort(a, WIDTH, HEIGHT, DISP, cocktail_sort, 'Cocktail Sort')
