@@ -14,6 +14,7 @@ from double_selection import double_selection_sort
 from cocktail import cocktail_sort
 from merge import merge_sort
 from heap import heap_sort
+from quick import quick_sort
 
 class Button():
     pass
@@ -60,3 +61,5 @@ while running:
                 running = new_sort(a, WIDTH, HEIGHT, DISP, merge_sort, 'Merge Sort')
             elif event.key == K_h:
                 running = new_sort(a, WIDTH, HEIGHT, DISP, heap_sort, 'Heap Sort')
+            elif event.key == K_q:
+                running = new_sort(a, WIDTH, HEIGHT, DISP, quick_sort, 'Quick Sort')
