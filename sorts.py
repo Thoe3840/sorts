@@ -3,7 +3,7 @@ from pygame import *
 import pyautogui
 import math
 from random import shuffle
-from time import sleep
+from time import sleep, time
 
 from output import display_list
 from insert import insert_sort

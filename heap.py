@@ -18,7 +18,6 @@ def build_max_heap(a):
 
 def heap_sort(a, w, h, disp):
     build_max_heap(a)
-    display_list(a, w, h, disp)
     for i in range(len(a) - 1, 0, -1):
         a[i], a[0] = a[0], a[i]
         max_heapify(a, 0, i)

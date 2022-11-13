@@ -2,7 +2,9 @@ from output import display_list
 import pygame
 
 def partition(a, start, end):
-    p = a[end]
+    p_i = (end - start) // 2 + start
+    p = a[p_i]
+    a[p_i], a[end] = a[end], a[p_i]
     for i in range(start, end):
         if a[i] < p:
             a[start], a[i] = a[i], a[start]
