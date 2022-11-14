@@ -15,6 +15,7 @@ from cocktail import cocktail_sort
 from merge import merge_sort
 from heap import heap_sort
 from quick import quick_sort
+from gnome import gnome_sort
 
 class Button():
     pass
@@ -50,7 +51,7 @@ while running:
                 running = new_sort(a, WIDTH, HEIGHT, DISP, insert_sort, 'Insert Sort')
             elif event.key == K_o:
                 # pass in shorter list...
-                running = new_sort([i for i in range(1, 8)], WIDTH, HEIGHT, DISP, bogo_sort, 'Bogo Sort')
+                running = new_sort(list(range(1, 8)), WIDTH, HEIGHT, DISP, bogo_sort, 'Bogo Sort')
             elif event.key == K_s:
                 running = new_sort(a, WIDTH, HEIGHT, DISP, selection_sort, 'Selection Sort')
             elif event.key == K_d:
@@ -63,3 +64,5 @@ while running:
                 running = new_sort(a, WIDTH, HEIGHT, DISP, heap_sort, 'Heap Sort')
             elif event.key == K_q:
                 running = new_sort(a, WIDTH, HEIGHT, DISP, quick_sort, 'Quick Sort')
+            elif event.key == K_g:
+                running = new_sort(a, WIDTH, HEIGHT, DISP, gnome_sort, 'Gnome Sort')
