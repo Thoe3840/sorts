@@ -23,8 +23,9 @@ def counting_sort(a, w, h, disp, p = 0):
         c[j] += c[j-1]
     for i in range(len(b)-1, -1, -1):
         x = b[i]
-        a[c[f(x)]] = x
-        c[f(x)] -= 1
+        d = f(x)
+        a[c[d]] = x
+        c[d] -= 1
         display_list(a, w, h, disp)
 
         for event in pygame.event.get():
