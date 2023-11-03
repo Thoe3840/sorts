@@ -16,6 +16,7 @@ from merge import merge_sort
 from heap import heap_sort
 from quick import quick_sort
 from counting import counting_sort
+from radix import radix_sort
 
 class Button():
     pass
@@ -66,3 +67,5 @@ while running:
                 running = new_sort(a, WIDTH, HEIGHT, DISP, quick_sort, 'Quick Sort')
             elif event.key == K_k:
                 running = new_sort(a, WIDTH, HEIGHT, DISP, counting_sort, 'Counting Sort')
+            elif event.key == K_r:
+                running = new_sort(a, WIDTH, HEIGHT, DISP, radix_sort, 'Radix Sort')
