@@ -12,12 +12,13 @@ def max_heapify(a, i, l):
             a[largest], a[i] = a[i], a[largest]
             max_heapify(a, largest, l)
 
-def build_max_heap(a):
+def build_max_heap(a, w, h, disp):
     for i in range(len(a)//2 - 1, -1, -1):
         max_heapify(a, i, len(a))
+        display_list(a, w, h, disp)
 
 def heap_sort(a, w, h, disp):
-    build_max_heap(a)
+    build_max_heap(a, w, h, disp)
     for i in range(len(a) - 1, 0, -1):
         a[i], a[0] = a[0], a[i]
         max_heapify(a, 0, i)
